@@ -17,7 +17,6 @@
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 1fr min-content 1fr;
-  margin-bottom: var(--mobile_sections-margin);
 }
 
 .decorated-zone::before {
@@ -119,7 +118,8 @@
   align-self: end;
 }
 
-.section {
+.main {
+  margin: var(--mobile_sections-margin) 0;
   padding: 0 var(--mobile_padding);
 }
 
@@ -180,7 +180,6 @@
   display: grid;
   grid-template-columns: auto;
   gap: 10px;
-  margin-bottom: var(--mobile_sections-margin);
 }
 
 .section_image {
@@ -213,7 +212,6 @@
   .header {
     grid-template-columns: 1fr 1fr;
     padding: 192px var(--pc_padding) 183px;
-    margin-bottom: var(--pc_sections-margin);
   }
 
   .decorated-zone::after {
@@ -247,10 +245,10 @@
     grid-column: 2;
   }
 
-  .section {
-    padding-left: var(--pc_padding);
-    padding-right: var(--pc_padding);
-  }
+  .main {
+  margin: var(--pc_sections-margin) 0;
+  padding: 0 var(--pc_padding);
+}
 
   .section:not(:last-of-type) {
     margin-bottom: var(--pc_sections-gap);
@@ -310,7 +308,6 @@
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto auto;
     gap: var(--section_cards-gap);
-    margin-bottom: var(--pc_sections-margin);
   }
 
   .picture .title-decor {
