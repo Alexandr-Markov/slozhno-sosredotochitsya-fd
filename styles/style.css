@@ -246,9 +246,9 @@
   }
 
   .main {
-  margin: var(--pc_sections-margin) 0;
-  padding: 0 var(--pc_padding);
-}
+    margin: var(--pc_sections-margin) 0;
+    padding: 0 var(--pc_padding);
+  }
 
   .section:not(:last-of-type) {
     margin-bottom: var(--pc_sections-gap);
