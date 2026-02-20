@@ -132,7 +132,7 @@
   font-weight: var(--title-weight);
   line-height: 23.4px;
   color: var(--menu-title-color);
-  padding-bottom: var(--section_cards-gap);
+  margin-bottom: var(--section_cards-gap);
 }
 
 .decor__card_list {
@@ -152,16 +152,16 @@
   color: var(--main-text-color);
 }
 
-.href_decor {
+.link {
   text-shadow: 2px 2px 0px var(--subtitle-background-color);
   text-decoration: none;
 }
 
-.href_decor:hover {
-  text-decoration: underline;
+.link:hover {
+  border-bottom: 1px solid var(--main-text-color);
 }
 
-.href_decor:focus-visible {
+.link:focus-visible {
   outline: 1px solid var(--main-text-color);
 }
 
@@ -176,7 +176,7 @@
   background-color: var(--subtitle-background-color);
 }
 
-.picture {
+.section:last-of-type {
   display: grid;
   grid-template-columns: auto;
   gap: 10px;
@@ -250,39 +250,36 @@
     padding: 0 var(--pc_padding);
   }
 
+  .section {
+    display: grid;
+    grid-template-columns: 236px auto auto auto;
+    column-gap: var(--section_cards-gap);
+  }
+
   .section:not(:last-of-type) {
     margin-bottom: var(--pc_sections-gap);
   }
 
-  .why {
-    display: grid;
-    grid-template-columns: 236px auto auto;
-    gap: var(--section_cards-gap);
-  }
-
   .section__title {
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 1 / span 2;
+    margin-bottom: 0;
   }
 
-  .why .decor__card_list {
-    grid-column: auto / span 2;
+  .decor__card_list {
+    grid-column: auto / span 3;
     width: 100%;
+    gap: var(--section_cards-gap);
   }
 
-  .what {
-    display: grid;
-    grid-template-columns: 236px auto auto auto;
-  }
-
-  .what .decor__card_list {
-    grid-column: auto / span 4;
-  }
-
-  .how {
+  .specific_section {
     display: grid;
     grid-template-columns: 236px auto auto auto;
     gap: var(--section_cards-gap);
+  }
+
+  .specific_section .decor__card_list {
+    grid-column: auto / span 4;
   }
 
   .card__title_specific_decor {
@@ -291,26 +288,16 @@
     align-self: start;
     justify-self: start;
     width: 100%;
-    margin-bottom: 0;
   }
 
-  .how .decor__card_list {
-    grid-column: 2 / span 3;
-    width: 100%;
-  }
-
-  .how .section__title {
-    grid-row: 1 / span 2;
-  }
-
-  .picture {
+  .section:last-of-type {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto auto;
     gap: var(--section_cards-gap);
   }
 
-  .picture .title-decor {
+  .section:last-of-type .title-decor {
     grid-row: 1;
     grid-column: 1 / span 3;
     width: 100%;
@@ -335,7 +322,6 @@
   .footer_decor {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     grid-column: auto / span 2;
-    margin-left: -5px;
   }
 }
 
@@ -360,10 +346,10 @@
   }
 
   .section:not(:last-of-type) {
-    grid-template-columns: 315px auto auto;
+    grid-template-columns: 315px auto auto auto;
   }
 
-  .what .decor__card_list {
+  .specific_section .decor__card_list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
